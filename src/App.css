@@ -13,7 +13,7 @@ h1, h2, h3, .card-body>.card-title {
 }
 
 h2 {
-  color: red;
+  color: black;
 }
 
 .card-img-overlay .card-title {
@@ -30,14 +30,14 @@ h2 {
 .site-footer {
   background-color: red;
   padding: 20px 0;
-  color: white;
+  color: black;
 }
 
 .jumbotron {
   margin: 0;
   padding: 30px;
   background-color: white;
-  color: white;
+  color: black;
 }
 
 /*.jumbotron h2 {
@@ -49,7 +49,7 @@ h2 {
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 i {
