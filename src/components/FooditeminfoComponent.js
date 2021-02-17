@@ -19,8 +19,10 @@ class Fooditeminfo extends Component {
     render() {
         if (this.props.fooditem) {
             return (
-                <div className="row">
-                    {this.renderFooditem(this.props.fooditem)}
+                <div className="container">
+                    <div className="row">
+                        {this.renderFooditem(this.props.fooditem)}
+                    </div>
                 </div>
             );
         }
