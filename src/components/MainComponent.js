@@ -31,12 +31,21 @@ class Main extends Component {
             );
         };
 
+        const FooditemWithId = ({match}) => {
+            return (
+                <Fooditeminfo 
+                    fooditem={this.state.fooditems.filter(fooditem => fooditem.id === +match.params.fooditemId)[0]}
+                />
+            );
+        };
+
         return (
             <div>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/ourfood' render={() => <OurFood fooditems={this.state.fooditems} />} />
+                    <Route path='/ourfood/:fooditemId' component={FooditemWithId} />
                     <Route exact path='/contactus' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>

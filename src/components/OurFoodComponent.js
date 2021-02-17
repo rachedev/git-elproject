@@ -1,13 +1,16 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 function RenderOurFoodItem({fooditem}) {
     return (
         <Card>
-            <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
-            <CardImgOverlay>
-                <CardTitle>{fooditem.name}</CardTitle>
-            </CardImgOverlay>
+            <Link to={`/ourfood/${fooditem.id}`}>
+                <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
+                <CardImgOverlay>
+                    <CardTitle>{fooditem.name}</CardTitle>
+                </CardImgOverlay>
+            </Link>
         </Card>
     );
 }
