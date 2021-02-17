@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
     return (
@@ -8,10 +9,10 @@ function Footer(props) {
                     <div className="col-4 col-sm-2 offset-1">
                         <h5>Links</h5>
                         <ul className="list-unstyled">
-                            <li color="white"><a href="#">Home</a></li>
-                            <li><a href="#">Our Food</a></li>
-                            <li><a href="#">Locations</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><Link to='/home'>Home</Link></li>
+                            <li><Link to='/ourfood'>Our Food</Link></li>
+                            <li><Link to='/locations'>Locations</Link></li>
+                            <li><Link to='/contactus'>Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className="col-6 col-sm-3 text-center">
@@ -22,7 +23,7 @@ function Footer(props) {
                         <a className="btn btn-social-icon btn-google" href="http://youtube.com/"><i className="fa fa-youtube" /></a> 
                     </div>
                     <div className="col-sm-4 text-center">
-                        <a role="button" className="btn btn-link" href="tel:+12345678900"><i className="fa fa-phone" /> 1-234-567-8900</a><br />
+                        <a role="button" className="btn btn-link" href="tel:+1234567890"><i className="fa fa-phone" /> 123-456-7890</a><br />
                         <a role="button" className="btn btn-link" href="mailto:notreal@notreal.co"><i className="fa fa-envelope-o" /> emailadd@somewhere.co</a>
                     </div>
                 </div>

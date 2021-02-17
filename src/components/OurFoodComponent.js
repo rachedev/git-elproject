@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle } from 'reactstrap';
 
-function RenderOurFoodItem({fooditem, onClick}) {
+function RenderOurFoodItem({fooditem}) {
     return (
-        <Card onClick={() => onClick(fooditem.id)}>
+        <Card>
             <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
             <CardImgOverlay>
                 <CardTitle>{fooditem.name}</CardTitle>
@@ -17,7 +17,7 @@ function OurFood(props) {
     const fooditems = props.fooditems.map(fooditem => {
         return (
             <div key={fooditem.id} className="col-md-5 m-1">
-                <RenderOurFoodItem fooditem={fooditem} onClick={props.onClick} />               
+                <RenderOurFoodItem fooditem={fooditem} />               
             </div>
         );
     });
