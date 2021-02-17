@@ -17,7 +17,7 @@ class OurFood extends Component {
         if (fooditem) {
             return (
                 <Card>
-                    <CardImg top src={fooditem.image} alt={fooditem.name} />
+                    <CardImg top src={fooditem.imagebasic} alt={fooditem.name} />
                     <CardBody>
                         <CardTitle>{fooditem.name}</CardTitle>
                         <CardText>{fooditem.description}</CardText>
