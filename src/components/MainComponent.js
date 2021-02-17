@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Navbar, NavbarBrand } from 'reactstrap';
 import OurFood from './OurFoodComponent';
 import Fooditeminfo from './FooditeminfoComponent';
+import Header from './HeaderComponent';
+import Footer from './FooterComponent';
 import { FOODITEMS } from '../shared/fooditems';
 
 class Main extends Component {
@@ -20,13 +21,10 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <Navbar dark color="danger">
-                <div className="container">
-                    <NavbarBrand href="/">El Presidente of Binondo</NavbarBrand>
-                </div>
-                </Navbar>
+                <Header />
                 <OurFood fooditems={this.state.fooditems} onClick ={fooditemId => this.onFooditemSelect(fooditemId)}/>
                 <Fooditeminfo fooditem={this.state.fooditems.filter(fooditem => fooditem.id === this.state.selectedFooditem)[0]} />
+                <Footer />
             </div>
         );
     }

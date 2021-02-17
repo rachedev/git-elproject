@@ -1,13 +1,57 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
+}
+
+h1, h2, h3, .card-body>.card-title {
+  font-family: "Roboto", cursive;
 }
 
 .card-title {
-  font: 500 1.25rem "Noto Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
   text-align: center;
+}
+
+h2 {
+  color: white;
 }
 
 .card-img-overlay .card-title {
   color: white;
-  background-color: rgba(255, 0, 0, 0.8);
+  background-color: rgba(255, 0, 0, 0.9);
+}
+
+.row-content {
+  padding: 50px 0;
+  border-bottom: 1px ridge;
+  min-height: 200px;
+}
+
+.site-footer {
+  background-color: red;
+  padding: 20px 0;
+  color: white;
+}
+
+.jumbotron {
+  margin: 0;
+  padding: 30px;
+  background-color: white;
+  color: white;
+}
+
+/*.jumbotron h2 {
+  color: #CEC8FF;
+}*/
+
+.navbar-dark {
+  background-color: red;
+}
+
+a {
+  color: white;
+}
+
+i {
+  color: white;
 }

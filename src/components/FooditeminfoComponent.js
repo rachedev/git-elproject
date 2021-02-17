@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class Fooditeminfo extends Component {
-    renderFooditem(fooditem) {
-        return (
-            <div className='col-md-5 m-1'>
-                <Card>
-                    <CardImg top src={fooditem.imagebasic} alt={fooditem.name} />
-                    <CardBody>
-                        <CardTitle>{fooditem.name}</CardTitle>
-                        <CardText>{fooditem.description}</CardText>
-                    </CardBody>
-                </Card>
-            </div>
-        )
-    }
+function RenderFooditem({fooditem}) {
+    return (
+        <div className='col-md-5 m-1'>
+            <Card>
+                <CardImg top src={fooditem.imagebasic} alt={fooditem.name} />
+                <CardBody>
+                    <CardText>{fooditem.description}</CardText>
+                </CardBody>
+            </Card>
+        </div>
+    )
+}
 
-    render() {
-        if (this.props.fooditem) {
-            return (
-                <div className="container">
-                    <div className="row">
-                        {this.renderFooditem(this.props.fooditem)}
-                    </div>
+function Fooditeminfo(props) {
+    if (props.fooditem) {
+        return (
+            <div className="container">
+                <div className="row">
+                    <RenderFooditem fooditem={props.fooditem} />
                 </div>
-            );
-        }
-        return <div />;
+            </div>
+        );
     }
+    return <div />;
 }
 
 export default Fooditeminfo;
