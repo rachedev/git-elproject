@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
-
+import Fooditeminfo from './FooditeminfoComponent';
 class OurFood extends Component {
     constructor(props) {
         super(props);
@@ -11,21 +11,6 @@ class OurFood extends Component {
 
     onFooditemSelect(fooditem) {
         this.setState({selectedFooditem: fooditem});
-    }
-
-    renderSelectedFooditem(fooditem) {
-        if (fooditem) {
-            return (
-                <Card>
-                    <CardImg top src={fooditem.imagebasic} alt={fooditem.name} />
-                    <CardBody>
-                        <CardTitle>{fooditem.name}</CardTitle>
-                        <CardText>{fooditem.description}</CardText>
-                    </CardBody>
-                </Card>
-            );
-        }
-        return <div />;
     }
 
     render() {
@@ -47,11 +32,7 @@ class OurFood extends Component {
                 <div className="row">
                     {fooditems}
                 </div>
-                <div className="row">
-                    <div className="col-md-5 m-1">
-                        {this.renderSelectedFooditem(this.state.selectedFooditem)}
-                    </div>
-                </div>
+                <Fooditeminfo fooditem={this.state.selectedFooditem} />
             </div>
         );
     }
