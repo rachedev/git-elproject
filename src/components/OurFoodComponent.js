@@ -1,56 +1,43 @@
 import React, { Component } from 'react';
+import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
 
 class OurFood extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            fooditems: [
-                {
-                    id: 0,
-                    name: 'Mami',
-                    image: 'assets/images/mamibasic.jpg',
-                    choices: 4,
-                    description: "hot noodle soup with vegetables and the addition of meat or wonton dumplings"
-                },
-                {
-                  id: 1,
-                  name: 'Congee',
-                  image: 'assets/images/congeebasic.jpg',
-                  choices: 4,
-                  description: "warm thick, white rice porridge with meat, fish, and/or century egg"
-                },
-                {
-                    id: 2,
-                    name: 'Noodles',
-                    image: 'assets/images/noodlesbasic.jpg',
-                    choices: 4,
-                    description: "hunger-satisfying noodle dish with meat and vegetables"
-                },
-                {
-                    id: 3,
-                    name: "Binondo\'s Best",
-                    image: 'assets/images/bbestbasic.jpg',
-                    choices: 5,
-                    description: "savory meat, seafood, or vegetable dish that perfectly accompanies rice"
-                },
-                {
-                    id: 4,
-                    name: "Combo Meals",
-                    image: 'assets/images/combobasic.jpg',
-                    choices: 4,
-                    description: "sumptuous combination of our food offerings"
-                },
-            ],
+            selectedFooditem: null
         };
     }
 
-    render() {
-        const ourfood = this.state.fooditems.map(fooditem => {
+    onFooditemSelect(fooditem) {
+        this.setState({selectedFooditem: fooditem});
+    }
+
+    renderSelectedFooditem(fooditem) {
+        if (fooditem) {
             return (
-                <div key={fooditem.id} className="col-12">
-                    <img src={fooditem.image} alt={fooditem.name}  class="img-fluid w-50 h-auto"/>
-                    <h2>{fooditem.name}</h2>
-                    <p>{fooditem.description}</p>
+                <Card>
+                    <CardImg top src={fooditem.image} alt={fooditem.name} />
+                    <CardBody>
+                        <CardTitle>{fooditem.name}</CardTitle>
+                        <CardText>{fooditem.description}</CardText>
+                    </CardBody>
+                </Card>
+            );
+        }
+        return <div />;
+    }
+
+    render() {
+        const fooditems = this.props.fooditems.map(fooditem => {
+            return (
+                <div key={fooditem.id} className="col-md-5 m-1">
+                    <Card onClick={() => this.onFooditemSelect(fooditem)}>
+                        <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
+                        <CardImgOverlay>
+                            <CardTitle>{fooditem.name}</CardTitle>
+                        </CardImgOverlay>
+                    </Card>
                 </div>
             );
         });
@@ -58,7 +45,12 @@ class OurFood extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    {ourfood}
+                    {fooditems}
+                </div>
+                <div className="row">
+                    <div className="col-md-5 m-1">
+                        {this.renderSelectedFooditem(this.state.selectedFooditem)}
+                    </div>
                 </div>
             </div>
         );

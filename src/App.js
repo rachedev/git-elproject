@@ -2,8 +2,16 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
 import OurFood from './components/OurFoodComponent';
 import './App.css';
+import { FOODITEMS } from './shared/fooditems';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            fooditems: FOODITEMS
+        };
+    }
+
     render() {
         return (
             <div className="App">
@@ -12,7 +20,7 @@ class App extends Component {
                     <NavbarBrand href="/">El Presidente of Binondo</NavbarBrand>
                 </div>
                 </Navbar>
-                <OurFood />
+                <OurFood fooditems={this.state.fooditems} />
             </div>
         );
     }
