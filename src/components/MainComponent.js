@@ -5,6 +5,7 @@ import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
 import Contact from './ContactComponent';
+import About from './AboutComponent';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { FOODITEMS } from '../shared/fooditems';
 import { LOCATIONS } from '../shared/locations';
@@ -46,6 +47,7 @@ class Main extends Component {
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/ourfood' render={() => <OurFood fooditems={this.state.fooditems} />} />
                     <Route path='/ourfood/:fooditemId' component={FooditemWithId} />
+                    <Route exact path='/aboutus' render={() => <About locations={this.state.locations} />} />
                     <Route exact path='/contactus' component={Contact} />
                     <Redirect to='/home' />
                 </Switch>
