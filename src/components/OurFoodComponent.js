@@ -33,7 +33,7 @@ function OurFood(props) {
                         <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>Our Food</BreadcrumbItem>
                     </Breadcrumb>
-                    <h2>Our Food</h2>
+                    <h2>OUR FOOD</h2>
                     <hr />
                 </div>
             </div>

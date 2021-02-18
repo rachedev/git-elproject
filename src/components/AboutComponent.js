@@ -40,7 +40,7 @@ function About(props) {
                         <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
                         <BreadcrumbItem active>About Us</BreadcrumbItem>
                     </Breadcrumb>
-                    <h2>About Us</h2>
+                    <h2>ABOUT US</h2>
                     <hr />
                 </div>
             </div>
