@@ -15,8 +15,8 @@ export const PROMOTIONS = [
     },
     {
         id: 2,
-        name: "10-year Anniversary",
-        image: "/assets/images/lomi10yrs.jpeg",
+        name: "Happy Anniversary!",
+        image: "/assets/images/tenyrs.jpg",
         featured: true,
         description: "Let's celebrate with our yummy lomi! Only P10!"
     }

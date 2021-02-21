@@ -1,9 +1,15 @@
 import React from 'react';
 import { Card, CardImg, CardImgOverlay, CardTitle, Breadcrumb, BreadcrumbItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform } from 'react-animation-components';
 
 function RenderOurFoodItem({fooditem}) {
     return (
+        <FadeTransform
+            in
+            transformProps={{
+                exitTransform: 'scale(0.5) translateY(50%)'
+            }}>
         <Card>
             <Link to={`/ourfood/${fooditem.id}`}>
                 <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
@@ -12,6 +18,7 @@ function RenderOurFoodItem({fooditem}) {
                 </CardImgOverlay>
             </Link>
         </Card>
+        </FadeTransform>
     );
 }
 
@@ -37,7 +44,7 @@ function OurFood(props) {
                     <hr />
                 </div>
             </div>
-            <div className="row">
+            <div className="row mt-5 mb-5">
                 {fooditems}
             </div>
         </div>

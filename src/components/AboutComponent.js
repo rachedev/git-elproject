@@ -1,12 +1,15 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 function RenderLocation({location}) {
     if (location) {
         return (
+            
+
             <React.Fragment>
-                <Media object src={location.image} alt={location.name} width="150"/>
+                <Media object src={location.image} alt={location.name} width="300"/>
                 <Media body className= "ml-5 mb-4">
                     <Media heading>
                         {location.name}
@@ -23,12 +26,18 @@ function About(props) {
 
     const locations = props.locations.map(location => {
         return (
+            <FadeTransform
+                in
+                transformProps={{
+                    exitTransform: 'scale(0.5) translateY(-50%)'
+                }}>
             <React.Fragment>
                 <Media tag="li" key={location.id}>
                     <RenderLocation location={location}/>
                 </Media>
                 <br />
             </React.Fragment>
+            </FadeTransform>
         );
     });
 
