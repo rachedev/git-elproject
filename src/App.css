@@ -76,3 +76,10 @@ i {
   transition: 300ms ease-in;
 }
 
+.zoom {
+  transition: transform .2s; 
+}
+
+.zoom:hover {
+  transform: scale(1.10);
+}

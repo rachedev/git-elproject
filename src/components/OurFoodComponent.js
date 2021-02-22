@@ -10,7 +10,7 @@ function RenderOurFoodItem({fooditem}) {
             transformProps={{
                 exitTransform: 'scale(0.5) translateY(50%)'
             }}>
-        <Card>
+        <Card className="zoom">
             <Link to={`/ourfood/${fooditem.id}`}>
                 <CardImg width="100%" src={fooditem.image} alt={fooditem.name} />
                 <CardImgOverlay>
